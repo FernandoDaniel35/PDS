@@ -1,5 +1,5 @@
 # Ts0
-## Tarea semanal 0 para la materia Procesamiento Digital de Señales de 6to año de Ingeniería Electrónica de la UTN FRBA
+### Tarea semanal 0 para la materia Procesamiento Digital de Señales de 6to año de Ingeniería Electrónica de la UTN FRBA
 
 En esta primera tarea realizamos un generador de señales senoidales utilizando Python.
 
