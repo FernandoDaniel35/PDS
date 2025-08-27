@@ -8,6 +8,6 @@ En esta primera tarea realizamos un generador de señales senoidales utilizando 
 
 **Descripción:**
 
-Una función debe recibir como parámetros la amplitud, la frecuencia, la fase y valor
+Realizar una función que reciba como parámetros la amplitud, la frecuencia, la fase y el valor
 de contínua de la señal. Además debe recibir los parámetros para poder muestrearla:
 frecuencia de muestreo y cantidad de muestras.
