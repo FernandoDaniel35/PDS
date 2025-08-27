@@ -6,7 +6,7 @@
 En esta primera tarea realizamos un generador de señales senoidales utilizando Python en Spyder de Ubuntu.
 
 
-**Descripción:**
+**Enunciado:**
 
 Realizar una función que reciba como parámetros la amplitud, la frecuencia, la fase y el valor
 de contínua de la señal. Además debe recibir los parámetros para poder muestrearla:
