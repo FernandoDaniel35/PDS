@@ -1,6 +1,6 @@
 # Ts1
-### Tarea semanal 1 para la materia Procesamiento Digital de Señales de 6to año de Ingeniería Electrónica de la UTN FRBA
-
+## Procesamiento Digital de Señales, 6to año de Ingeniería Electrónica de la UTN FRBA
+### Tarea semanal 1 
 
 
 En esta primera tarea realizamos un generador de señales senoidales utilizando Python en Spyder de Ubuntu.
