@@ -1,5 +1,5 @@
 # Ts1
-## Procesamiento Digital de Señales, 6to año de Ingeniería Electrónica de la UTN FRBA
+## Procesamiento Digital de Señales, 6to año de Ingeniería Electrónica, UTN FRBA
 ### Tarea semanal 1 
 
 
