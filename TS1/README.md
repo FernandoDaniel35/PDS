@@ -3,7 +3,7 @@
 ### Tarea semanal 1 
 
 
-En esta primera tarea realizamos un generador de señales senoidales utilizando Python en Spyder de Ubuntu.
+En esta primera tarea realizamos un generador de señales senoidales utilizando Python en Spyder 5 de Ubuntu.
 
 
 **Enunciado:**
