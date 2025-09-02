@@ -72,7 +72,7 @@ def generador_senoidal(ax, dc, fx, ph, N, fs):
 
 
 
-# Función para calcular la DFT manualmente
+# Función para calcular la DFT
 def dft(x):
     N = len(x)
     X = np.zeros(N, dtype=complex)  # Array para los coeficientes de frecuencia
