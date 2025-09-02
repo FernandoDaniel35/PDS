@@ -51,7 +51,7 @@ Parámetros de la DFT:
 
 Devuelve:
       
-      X : DFT de la señal
+       X : DFT de la señal, matriz (Nx1) de números complejos.
 """ 
 
 
