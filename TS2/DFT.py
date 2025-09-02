@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Función que genera una señal senoidal a partir de los parámetros recibidos
-y luego calcula la DFT
+Función que genera una señal senoidal a partir de los parámetros recibidos,
+calcula la DFT y luego la grafica junto con la señal generada.
 
 Created on Mon Aug 26 19:27:10 2025
 
