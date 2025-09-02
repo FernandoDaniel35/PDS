@@ -106,11 +106,11 @@ T_sim = N * Ts        # Tiempo de simulación [s]
 # Llamo a la función para generar la senoidal muestreada
 tt, xx = generador_senoidal(ax, dc, fx, ph, N, fs)
 
-# Calcular la DFT de la señal
+# Calcula la DFT de la señal
 X = dft(xx)
 
 
-# Tomar solo la mitad positiva del espectro
+# Toma solo la mitad positiva del espectro
 half_N = N // 2                  # Solo tomo hasta la mitad de las frecuencias
 X_pos = X[:half_N]               # Coeficientes del espectro positivo
 magnitudes = np.abs(X_pos)       # Magnitud 
