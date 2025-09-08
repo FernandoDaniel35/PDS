@@ -4,4 +4,7 @@
 
 **Ts1:** En esta primera tarea realizamos un generador de señales senoidales utilizando Python en Spyder de Ubuntu.
 
-**Ts2:** Utilizando el generador de señales senoidales de la tarea anterior, calculamos su DFT y la graficamos.
+**Ts2:** Utilizando el generador de señales senoidales de la tarea anterior, calculamos su DFT y la graficamos. Luego generamos una señal senoidal a la que le sumamos ruido uniforme de varianza $\sigma^2 = 4$. Reemplazamos el ruido uniforme por ruido Gaussiano.
+
+
+
