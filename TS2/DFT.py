@@ -4,7 +4,7 @@
 Función que genera una señal senoidal a partir de los parámetros recibidos,
 calcula la DFT y luego la grafica junto con la señal generada.
 
-Created on Mon Aug 26 19:27:10 2025
+Created on Mon Sep 8 19:17:10 2025
 
 @author: Fernando Daniel Fiamberti
 """
@@ -120,20 +120,7 @@ frequencias = np.arange(half_N)  # Eje de frecuencias
 
 
 
-"""
-plt.subplot(filas, columnas, ìndice)
-
-    filas:    Número de filas
-
-    columnas: Número de columnas
-
-    ìndice: Índice del gráfico donde se debe colocar el gráfico actual 
-            (los índices empiezan desde 1).
-"""
-
-
 # Grafica la señal generada
-plt.subplot(1, 2, 1)
 plt.plot( tt, xx, 'o--')
 plt.title('Senoidal Generada')
 plt.xlabel('Tiempo [s]')
@@ -143,8 +130,6 @@ plt.show()
 
 
 # Grafica la magnitud de la DFT (solo espectro positivo)
-plt.subplot(1, 2, 2)
-# plt.figure(figsize=(10, 6))
 plt.scatter(frequencias , magnitudes, color='g')  # Usamos scatter para no conectar los puntos
 plt.title("Espectro (DFT)")
 plt.xlabel("Frecuencia [Hz]")
@@ -155,7 +140,6 @@ plt.show()
 
 """
 %matplotlib qt  +   ENTER     =>
-
 permite graficar en una pantalla emergente
 """
 
