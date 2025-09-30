@@ -34,7 +34,8 @@ para la i-ésima realización y la w-ésima ventana (ver detalles debajo).
 Y de frecuencia  
 $\Omega_1$:
 
-$\hat{\Omega}_1^i = \arg \max_{\Omega} \left| X_i^w(\Omega) \right|$
+Omegâ₁ⁱ = arg max_Ω |Xᵢʷ(Ω)|
+
 
 para cada una de las ventanas:
 
@@ -95,7 +96,8 @@ $va = \mathrm{var}\{\hat{a}_0\} = E \{ (\hat{a}_0 - E\{\hat{a}_0\})^2 \}$
 
 y pueden aproximarse cuando consideramos los valores esperados como las medias muestrales:
 
-$E\{\hat{a}_0\} = \mu_{\hat{a}} = \frac{1}{M} \sum_{j=0}^{M-1} \hat{a}_j$
+E{â₀} = μₐ = (1/M) * Σⱼ₌₀^{M−1} âⱼ
+
 
 $sa = \mu_{\hat{a}} - a_0$
 
@@ -107,3 +109,9 @@ $va = \frac{1}{M} \sum_{j=0}^{M-1} (a_j^ - \mu_{\hat{a}})^2$
 
 - Analice el efecto del zero-padding para el estimador $\hat{\Omega}_1$.
 - Proponga estimadores alternativos para frecuencia y amplitud de la senoidal y repita el experimento.
+
+
+
+```python
+
+```
