@@ -8,3 +8,4 @@
 Luego le sumamos ruido uniforme de varianza $\sigma^2 = 4$. y observamos el resultado en forma gráfica.
 Reemplazamos el ruido uniforme por ruido Gaussiano y graficamos nuevamente.
 
+**Ts3:** Estimación de Amplitud y Frecuencia de una Señal.
