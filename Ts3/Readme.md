@@ -16,47 +16,40 @@ $$
 
 Donde:
 
-<div align="left">
+
 $$
 \Omega_0 = \frac{\pi}{2}
 $$
-</div>
 
-<div align="left">
 $$
 \Omega_1 = \Omega_0 + f_r \cdot \frac{2\pi}{N}
 $$
-</div>
 
-<div align="left">
 $$
 f_r \sim \mathcal{U}(-2, 2)
 $$
-</div>
 
-<div align="left">
 $$
 n_a(n) \sim \mathcal{N}(0, \sigma^2)
 $$
-</div>
 
 ## Estimadores a diseñar
 
 ### Estimador de amplitud
 
-<div align="left">
+
 $$
 \hat{a}_1^i = \left| X_{iw}(\Omega_0) \right| = \left| \mathcal{F}\{x(n) \cdot w_i(n)\} \right|
 $$
-</div>
+
 
 ### Estimador de frecuencia
 
-<div align="left">
+
 $$
 \hat{\Omega}_1^i = \underset{\Omega}{\mathrm{arg\,max}} \left\{ \left| X_{iw}(\Omega) \right| \right\}
 $$
-</div>
+
 
 Donde \( w_i(n) \) es la ventana utilizada para ponderar la señal.
 
@@ -80,37 +73,36 @@ Donde \( w_i(n) \) es la ventana utilizada para ponderar la señal.
 
 Sesgo:
 
-<div align="left">
+
 $$
 s_a = \mathbb{E}[\hat{a}_0] - a_0 \approx \mu_{\hat{a}} - a_0
 $$
-</div>
 
 Varianza:
 
-<div align="left">
+
 $$
 v_a = \mathrm{Var}[\hat{a}_0] \approx \frac{1}{M} \sum_{j=0}^{M - 1} \left( \hat{a}_j - \mu_{\hat{a}} \right)^2
 $$
-</div>
+
 
 ### Estimación de frecuencia
 
 Sesgo:
 
-<div align="left">
+
 $$
 s_{\Omega} = \mathbb{E}[\hat{\Omega}_1] - \Omega_1 \approx \mu_{\hat{\Omega}} - \Omega_1
 $$
-</div>
+
 
 Varianza:
 
-<div align="left">
+
 $$
 v_{\Omega} = \mathrm{Var}[\hat{\Omega}_1] \approx \frac{1}{M} \sum_{j=0}^{M - 1} \left( \hat{\Omega}_j - \mu_{\hat{\Omega}} \right)^2
 $$
-</div>
+
 
 ## Resultados esperados
 
