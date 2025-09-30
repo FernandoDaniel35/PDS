@@ -3,115 +3,107 @@
 
 
 # Estimación de Amplitud y Frecuencia de una Señal
-## Señal a generar
+# Consignas para la generación de la señal
 
-Se define la señal:
+Comenzaremos con la generación de la siguiente señal:
 
-$$
-x(n) = a_0 \cdot \sin(\Omega_1 \cdot n) + n_a(n)
-$$
+$x(n) = a_0 \cdot \sin(\Omega_1 \cdot n) + n_a(n)$
 
-Donde:
+siendo
 
-$$
-\Omega_0 = \frac{\pi}{2}
-$$
+$\Omega_1 = \Omega_0 + f_r \cdot \frac{2 \pi}{N}$
 
-$$
-\Omega_1 = \Omega_0 + f_r \cdot \frac{2\pi}{N}
-$$
+$\Omega_0 = \frac{\pi}{2}$
 
-$$
-f_r \sim \mathcal{U}(-2, 2)
-$$
+siendo la variable aleatoria definida por la siguiente distribución de probabilidad
 
-$$
-n_a(n) \sim \mathcal{N}(0, \sigma^2)
-$$
+$f_r \sim U(-2, 2)$
 
-## Estimadores a diseñar
+$n_a \sim N(0, \sigma^2)$
 
-### Estimador de amplitud
+---
 
-$$
-\hat{a}_1^i = \left| X_{iw}(\Omega_0) \right| = \left| \mathcal{F}\{x(n) \cdot w_i(n)\} \right|
-$$
+# Diseño de estimadores
 
-### Estimador de frecuencia
+Diseñe los siguientes estimadores de amplitud $a_1$:
 
-$$
-\hat{\Omega}_1^i = \underset{\Omega}{\mathrm{arg\,max}} \left\{ \left| X_{iw}(\Omega) \right| \right\}
-$$
+$\hat{a}_1^i = |X_i^w(\Omega_0)| = \left| \mathcal{F} \{ x(n) \cdot w_i(n) \} \right|$
 
-Donde \( w_i(n) \) es la ventana utilizada para ponderar la señal.
+para la i-ésima realización y la w-ésima ventana (ver detalles debajo).
 
-## Ventanas a utilizar
+Y de frecuencia  
+$\Omega_1$:
 
-1. Rectangular (sin ventana)
-2. Flattop (scipy.signal.windows.flattop)
-3. Blackman-Harris (scipy.signal.windows.blackmanharris)
-4. Otra a elección desde scipy.signal.windows
+$\hat{\Omega}_1^i = \arg \max_{\Omega} \left| X_i^w(\Omega) \right|$
 
-## Parámetros del experimento
+para cada una de las ventanas:
 
-- Cantidad de realizaciones: 200
-- Muestras por señal: 1000
-- SNRs a evaluar: 3 dB y 10 dB
-- Potencia de la senoidal: 1 W (ajustar \( a_0 \) para que se cumpla)
 
-## Métricas a calcular
+- rectangular (sin ventana)
+- flattop
+- blackmanharris
+- otra que elija de scipy.signal.windows
 
-### Estimación de amplitud
+---
 
-Sesgo:
+# Consignas para la experimentación
 
-$$
-s_a = \mathbb{E}[\hat{a}_0] - a_0 \approx \mu_{\hat{a}} - a_0
-$$
+- Considere 200 realizaciones (muestras tomadas de $f_r$) de 1000 muestras para cada experimento.
+- Parametrice para SNR's de 3 y 10 dB (Ayuda: calibre $a_0$ para que la potencia de la senoidal sea 1 W).
 
-Varianza:
+---
 
-$$
-v_a = \mathrm{Var}[\hat{a}_0] \approx \frac{1}{M} \sum_{j=0}^{M - 1} \left( \hat{a}_j - \mu_{\hat{a}} \right)^2
-$$
+# Se pide
 
-### Estimación de frecuencia
+1. Realizar una tabla por cada SNR, que describa el sesgo y la varianza de cada estimador para cada ventana analizada. Recuerde incluir las ventanas rectangular (sin ventana), flattop y blackmanharris y otras que considere.
 
-Sesgo:
+---
 
-$$
-s_{\Omega} = \mathbb{E}[\hat{\Omega}_1] - \Omega_1 \approx \mu_{\hat{\Omega}} - \Omega_1
-$$
+# Estimación de Amplitud
 
-Varianza:
+| Ventana      | Sesgo (sa) | Varianza (va) |
+|--------------|------------|---------------|
+| Rectangular  |            |               |
+| Flat-top     |            |               |
+| Blackman     |            |               |
+| Otras        |            |               |
 
-$$
-v_{\Omega} = \mathrm{Var}[\hat{\Omega}_1] \approx \frac{1}{M} \sum_{j=0}^{M - 1} \left( \hat{\Omega}_j - \mu_{\hat{\Omega}} \right)^2
-$$
+---
 
-## Resultados esperados
+# Estimación de Frecuencia
 
-### Para cada SNR (3 dB y 10 dB)
+| Ventana      | Sesgo (sa) | Varianza (va) |
+|--------------|------------|---------------|
+| Rectangular  |            |               |
+| Flat-top     |            |               |
+| Blackman     |            |               |
+| Otras        |            |               |
 
-#### Estimación de amplitud
+---
 
-| Ventana     | Sesgo ($s_a$) | Varianza ($v_a$) |
-|-------------|----------------|------------------|
-| Rectangular |                |                  |
-| Flattop     |                |                  |
-| Blackman    |                |                  |
-| Otra        |                |                  |
+# Ayuda para cálculo de sesgo y varianza
 
-#### Estimación de frecuencia
+Puede calcular experimentalmente el sesgo y la varianza de un estimador:
 
-| Ventana     | Sesgo ($s_\Omega$) | Varianza ($v_\Omega$) |
-|-------------|---------------------|------------------------|
-| Rectangular |                     |                        |
-| Flattop     |                     |                        |
-| Blackman    |                     |                        |
-| Otra        |                     |                        |
+$\hat{a}_0 = |X_i^w(\Omega_0)|$
 
-## Bonus
+siendo
 
-- Analizar el efecto del zero-padding en el estimador de frecuencia \( \hat{\Omega}_1 \).
-- Proponer estimadores alternativos para amplitud y frecuencia, y repetir el experimento.
+$sa = E\{\hat{a}_0\} - a_0$
+
+$va = \mathrm{var}\{\hat{a}_0\} = E \{ (\hat{a}_0 - E\{\hat{a}_0\})^2 \}$
+
+y pueden aproximarse cuando consideramos los valores esperados como las medias muestrales:
+
+$E\{\hat{a}_0\} = \mu_{\hat{a}} = \frac{1}{M} \sum_{j=0}^{M-1} \hat{a}_j$
+
+$sa = \mu_{\hat{a}} - a_0$
+
+$va = \frac{1}{M} \sum_{j=0}^{M-1} (a_j^ - \mu_{\hat{a}})^2$
+
+---
+
+# Bonus
+
+- Analice el efecto del zero-padding para el estimador $\hat{\Omega}_1$.
+- Proponga estimadores alternativos para frecuencia y amplitud de la senoidal y repita el experimento.
