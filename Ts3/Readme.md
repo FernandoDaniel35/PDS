@@ -3,19 +3,15 @@
 
 
 # Estimación de Amplitud y Frecuencia de una Señal
-
 ## Señal a generar
 
 Se define la señal:
-
 
 $$
 x(n) = a_0 \cdot \sin(\Omega_1 \cdot n) + n_a(n)
 $$
 
-
 Donde:
-
 
 $$
 \Omega_0 = \frac{\pi}{2}
@@ -37,19 +33,15 @@ $$
 
 ### Estimador de amplitud
 
-
 $$
 \hat{a}_1^i = \left| X_{iw}(\Omega_0) \right| = \left| \mathcal{F}\{x(n) \cdot w_i(n)\} \right|
 $$
 
-
 ### Estimador de frecuencia
-
 
 $$
 \hat{\Omega}_1^i = \underset{\Omega}{\mathrm{arg\,max}} \left\{ \left| X_{iw}(\Omega) \right| \right\}
 $$
-
 
 Donde \( w_i(n) \) es la ventana utilizada para ponderar la señal.
 
@@ -73,36 +65,29 @@ Donde \( w_i(n) \) es la ventana utilizada para ponderar la señal.
 
 Sesgo:
 
-
 $$
 s_a = \mathbb{E}[\hat{a}_0] - a_0 \approx \mu_{\hat{a}} - a_0
 $$
 
 Varianza:
 
-
 $$
 v_a = \mathrm{Var}[\hat{a}_0] \approx \frac{1}{M} \sum_{j=0}^{M - 1} \left( \hat{a}_j - \mu_{\hat{a}} \right)^2
 $$
-
 
 ### Estimación de frecuencia
 
 Sesgo:
 
-
 $$
 s_{\Omega} = \mathbb{E}[\hat{\Omega}_1] - \Omega_1 \approx \mu_{\hat{\Omega}} - \Omega_1
 $$
 
-
 Varianza:
-
 
 $$
 v_{\Omega} = \mathrm{Var}[\hat{\Omega}_1] \approx \frac{1}{M} \sum_{j=0}^{M - 1} \left( \hat{\Omega}_j - \mu_{\hat{\Omega}} \right)^2
 $$
-
 
 ## Resultados esperados
 
