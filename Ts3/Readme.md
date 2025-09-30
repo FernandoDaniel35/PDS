@@ -8,11 +8,11 @@
 
 Se define la señal:
 
-<div align="left">
+
 $$
 x(n) = a_0 \cdot \sin(\Omega_1 \cdot n) + n_a(n)
 $$
-</div>
+
 
 Donde:
 
