@@ -1,0 +1,134 @@
+si hago el ancho de banda de una señal de fm banda ancha con canal normalizado de 200khzy desviacion maxima de 75khz, poorque por los tres metodos me da 75khz de BW y no 150khz ?
+
+
+
+Esa es una excelente pregunta que aborda la diferencia entre el ancho de banda de Carson (BW de ocupación) y el ancho de banda de potencia calculado por los métodos de Densidad Espectral de Potencia (DEP) como Periodograma, Welch y Blackman-Tukey.
+
+La razón fundamental por la que los tres métodos de DEP te dan un ancho de banda (BW) cercano a 75 kHz (o ±75 kHz) y no a 150 kHz es el criterio que estás aplicando y la naturaleza de la modulación de FM de banda ancha (WBFM).
+
+1. Naturaleza del Ancho de Banda en FM
+En la modulación FM, existen dos conceptos principales de ancho de banda:
+
+A. Ancho de Banda de Ocupación (Regla de Carson) 📡
+La regla de Carson establece el ancho de banda de transmisión necesario (BW de ocupación) para que la señal transmita la mayor parte de su potencia (típicamente > 98%).
+
+La regla es:
+
+BW 
+Carson
+​
+ =2×(Δf+f 
+m
+​
+ )
+Donde:
+
+Δf: Desviación máxima de frecuencia (aquí 75 kHz).
+
+f 
+m
+​
+ : Frecuencia máxima de la señal moduladora (audio, típicamente 15 kHz para radiodifusión FM).
+
+Si asumimos f 
+m
+​
+ =15 kHz (audio estéreo):
+
+BW 
+Carson
+​
+ =2×(75 kHz+15 kHz)=2×90 kHz=180 kHz
+El canal normalizado de 200 kHz se elige para incluir estas 180 kHz y dejar bandas de guarda. Este valor (180 kHz o 200 kHz) es el BW de ocupación, no el BW de potencia de la portadora pura.
+
+B. Ancho de Banda de Potencia (El que te dan los métodos DEP) 🔥
+El ancho de banda que estás calculando con los tres métodos DEP (Periodograma, Welch, Blackman-Tukey) se basa en un umbral de potencia relativo al pico, como −10 dB,−20 dB, etc.
+
+Cuando observas el espectro de una señal FM de banda ancha sin moduladora (o modulada por una única sinusoide), la energía se distribuye en múltiples bandas laterales de Bessel.
+
+El ancho de banda real donde la potencia es significativamente alta (cercana al 0 dB del pico) está dominado por la desviación de frecuencia (Δf).
+
+La mayor concentración de potencia se encuentra en el rango de ±Δf alrededor de la portadora.
+
+2. La Clave: La Desviación de Frecuencia (Δf)
+En la práctica, al medir el BW de potencia de una señal FM (es decir, dónde se concentran los componentes más fuertes), los criterios de −3 dB o −10 dB suelen limitarse al rango de la desviación máxima (±Δf).
+
+Si la desviación máxima es 75 kHz, el ancho de banda medido con el umbral de potencia es:
+
+BW 
+medido
+​
+ ≈±75 kHz=150 kHz
+¿Por qué obtienes 75 kHz y no 150 kHz?
+Es muy probable que tu función de cálculo de ancho de banda (como la que usaste en los scripts anteriores) solo esté reportando la frecuencia superior (f 
+high
+​
+ ) a partir de la portadora de 0 Hz (después de la traslación de frecuencia), o esté reportando la desviación máxima en lugar de la diferencia total:
+
+Si tu gráfico DEP está centrado en 0 Hz (portadora):
+
+La Frecuencia Mínima (f 
+low
+​
+ ) será ≈−75 kHz.
+
+La Frecuencia Máxima (f 
+high
+​
+ ) será ≈+75 kHz.
+
+El Ancho de Banda (BW) debe ser f 
+high
+​
+ −f 
+low
+​
+ =75 kHz−(−75 kHz)=150 kHz.
+
+Posible error: Si el código solo reporta f 
+high
+​
+  (es decir, 75 kHz) asumiendo que el BW es ±75 kHz, ahí está tu resultado de 75 kHz.
+
+Si tu gráfico DEP solo muestra frecuencias positivas (de 0 Hz a f 
+s
+​
+ /2):
+
+Si tu señal es una portadora pura no modulada (un solo pico en la portadora), el BW sería 0 Hz.
+
+Si tu señal es FM modulada y la portadora está en f 
+c
+​
+ , y la trasladas a 0 Hz, solo verás la mitad del espectro positivo.
+
+Posible error: Al centrar el espectro en 0 Hz y reportar f 
+high
+​
+ ≈75 kHz, el código puede estar reportando Δf y no 2Δf.
+
+Conclusión y Corrección
+Los métodos de DEP (Periodograma, Welch, Blackman-Tukey) sí calculan la distribución de potencia correctamente. La discrepancia se debe a cómo se interpretan y reportan los límites de frecuencia en tu código:
+
+El BW de ocupación es 180 kHz (Carson).
+
+El BW de potencia significativo (donde los picos de potencia de las bandas laterales más fuertes están) es ≈150 kHz (es decir, ±75 kHz).
+
+Si tus métodos reportan 75 kHz, están reportando la mitad del ancho de banda total (la desviación máxima Δf), asumiendo simetría.
+
+Para obtener el valor de 150 kHz a partir de tu código actual, asegúrate de que el cálculo final del BW sea:
+
+BW=f 
+high
+​
+ −f 
+low
+​
+ 
+Donde f 
+low
+​
+  y f 
+high
+​
+  son las frecuencias mínimas y máximas que superan el umbral de potencia en el espectro centrado en 0 Hz.
