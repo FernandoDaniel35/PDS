@@ -9,3 +9,5 @@ Luego le sumamos ruido uniforme de varianza $\sigma^2 = 4$. y observamos el resu
 Reemplazamos el ruido uniforme por ruido Gaussiano y graficamos nuevamente.
 
 **Ts3:** Estimación de Amplitud y Frecuencia de una Señal.
+
+**Ts4:** Primeras nociones de estimación espectral: Ancho de banda de señales
