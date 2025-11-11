@@ -1,0 +1,4 @@
+Método,Frecuencia baja [Hz],Frecuencia alta [Hz],Ancho de banda [Hz]
+Periodograma,939.904,939.904,0.000
+Welch,937.500,937.500,0.000
+Blackman–Tukey,925.781,1933.594,1007.812
