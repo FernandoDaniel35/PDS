@@ -70,7 +70,7 @@ plt.title("FFT del Archivo CW.wav - Detección de Frecuencia del Tono (500 Hz a 
 plt.xlabel("Frecuencia [Hz]")
 plt.ylabel("Magnitud (Escala Logarítmica)")
 
-# --- MODIFICACIÓN CLAVE: Limitar el eje X al rango 500 Hz a 1300 Hz ---
+# --- Limitar el eje X al rango 500 Hz a 1300 Hz ---
 plt.xlim(500, 1300) 
 # ----------------------------------------------------------------------
 
@@ -82,4 +82,5 @@ plt.show()
 # Imprimir el resultado en la consola
 print("-" * 40)
 print(f"La frecuencia del tono con el pico más alto es: {peak_frequency:.2f} Hz")
+
 print("-" * 40)
