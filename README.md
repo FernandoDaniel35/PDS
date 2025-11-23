@@ -11,7 +11,8 @@ Reemplazamos el ruido uniforme por ruido Gaussiano y graficamos nuevamente.
 **Ts3:** Estimación de Amplitud y Frecuencia de una Señal.
 
 **Ts4:** Primeras nociones de estimación espectral: Ancho de banda de señales
-**Ts5**  Filtrado digital lineal de ECG (1ra parte): Usando el archivo ecg.mat que contiene un registro electrocardiográfico (ECG) registrado durante una prueba de esfuerzo, junto con una serie de variables descriptas a continuación. Diseñe y aplique los filtros digitales necesarios para mitigar las siguientes fuentes de contaminación:
+
+**Ts5:**  Filtrado digital lineal de ECG (1ra parte): Usando el archivo ecg.mat que contiene un registro electrocardiográfico (ECG) registrado durante una prueba de esfuerzo, junto con una serie de variables descriptas a continuación. Diseñe y aplique los filtros digitales necesarios para mitigar las siguientes fuentes de contaminación:
 
     Ruido causado por el movimiento de los electrodos (Alta frecuencia).
     Ruido muscular (Alta frecuencia).
