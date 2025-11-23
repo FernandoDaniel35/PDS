@@ -1,0 +1,5 @@
+Filtro,Orden (N),Rizo Máx en BP (dB),Atenuación Mín en BS (dB),Retardo de Grupo Prom (muestras)
+FIR Kaiser,N=4000,0.6958,148.5,1999.5
+FIR Parks-McClellan,N=4000,0.1299,159.0,1999.5
+IIR Chebyshev I,N=14,0.5000,159.9,1.5
+IIR Cauer/Elíptico,N=8,0.5000,140.0,17.4
