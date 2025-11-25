@@ -22,7 +22,7 @@ Reemplazamos el ruido uniforme por ruido Gaussiano y graficamos nuevamente.
     💎 Proponga algún tipo de señal, ya sea de la TS anterior u otra que no haya sido analizada y repita el análisis. No 
     olvide explicar su origen y cómo fue digitalizada.
 
-    **Agregué una señal de telegrafía inmersa en ruido, grabada por mi celular de la salida de un equipo   
+  **Agregué una señal de telegrafía inmersa en ruido, grabada por mi celular de la salida de un equipo   
     Kenwood TS-120s y realicé el diseño de los 4 filtros. Grafiqué el resultado en magnitud y luego grafiqué la señal en 
     el tiempo de cada salida filtrada. Los audios se encuentran en la carpeta temp_audio_files.**
  
